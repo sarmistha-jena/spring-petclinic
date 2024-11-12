@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage 'git checkout'{
+        stage('git checkout'){
             //agent (label 'demo1')
             steps{
                 git branch: 'main',  url: 'https://github.com/sarmistha-jena/spring-petclinic.git'
