@@ -23,14 +23,6 @@ pipeline{
                 sh 'docker build -t sarmisthajena/spring-petclinic:latest .'
             }
         }
-        stage('Docker Push') {
-            agent any
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
-                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-                sh 'docker push sarmisthajena/spring-petclinic:latest'
-            }
-        }
     }
   }
 }
