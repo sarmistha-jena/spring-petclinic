@@ -1,5 +1,5 @@
 pipeline{
-    agent { label 'demo1'}
+    agent none
     stages{
         stage('Maven Install') {
             agent {
