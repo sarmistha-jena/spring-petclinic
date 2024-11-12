@@ -2,7 +2,7 @@ pipeline{
     agent none
     stages{
         stage 'git checkout'{
-            agent (label 'node1')
+            agent { label 'demo1' }
             steps{
                 git branch: 'main',  url: 'https://github.com/sarmistha-jena/spring-petclinic.git'
             }
